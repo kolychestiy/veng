@@ -5,12 +5,12 @@
 using namespace std;
 
 bool check_times_solves(vector<Solve_base*> solves){
-    Gen_random_base gen(2000, 100000000000);
+    Gen_random_base gen(700, 700, 4000000000000);
     
     vector<long long> tms(solves.size());
-    int cp = 10;
+    int cp = 100;
     for (int i = 0; i < cp; i++){
-        // cout << i << endl;
+        cout << i << endl;
         vector<vector<long long>> a;
         gen.next(a);
 

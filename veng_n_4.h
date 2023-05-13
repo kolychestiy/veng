@@ -34,35 +34,16 @@ protected:
         return false;
     }
 
-    void dfs(int v){
-        if (lwas[v] == cw){
-            return;
-        }
-        lwas[v] = cw;
-
-        for (int u = 0; u < m; u++){
-            if (a[v][u] || rwas[u] == cw || lnei[v] == u){
-                continue;
-            }
-
-            rwas[u] = cw;
-            if (rnei[u] != -1){
-                dfs(rnei[u]);
-            }
-        }
-    }
-
 public:
     void solve (vector<vector<long long>> b) override {
         init(b);
-        assert(n == m);
         answer = 0;
         cw = 0;
 
         lnei = vector<int> (n, -1);
         rnei = vector<int> (m, -1);
         lwas = vector<int> (n);
-        rwas = vector<int> (n);
+        rwas = vector<int> (m);
 
         for (int v = 0; v < n; v++){
             while (true) {
