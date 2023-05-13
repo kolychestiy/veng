@@ -4,17 +4,24 @@
 #include "gen_random_base.h"
 using namespace std;
 
-bool check_correct_solves(vector<Solve_base*> solves){
-    Gen_random_base gen(20, 100000000000);
+bool check_times_solves(vector<Solve_base*> solves){
+    Gen_random_base gen(2000, 100000000000);
     
-    for (int i = 0; i < 1000; i++){
+    vector<long long> tms(solves.size());
+    int cp = 10;
+    for (int i = 0; i < cp; i++){
+        // cout << i << endl;
         vector<vector<long long>> a;
         gen.next(a);
 
         vector<long long> ans;
+        int j = 0;
         for (auto sol : solves){
+            tms[j] -= clock();
             sol->solve(a);
+            tms[j] += clock();
             ans.push_back(sol->get_answer());
+            j++;
         }
 
         if (count(ans.begin(), ans.end(), ans.back()) != ans.size()){
@@ -36,5 +43,8 @@ bool check_correct_solves(vector<Solve_base*> solves){
     }
 
     cout << "GOOD!\n";
+    for (auto e : tms){
+        cout << e / (double)cp << ' ';
+    }
     return true;
 }

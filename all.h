@@ -5,6 +5,13 @@
 #include "gen_random_base.h"
 #include "gen_random_nofull.h"
 #include "check_correct.h"
+#include "min_cost_djkstra_n_3.h"
+#include "min_cost_levita_n^5.h"
+#include "veng_n_5.h"
+#include "veng_n_4.h"
+#include "check_time.h"
+#include "veng_n_3.h"
+#include "veng_lopatin.h"
 using namespace std;
 
 vector<vector<long long>> read_base_input(){

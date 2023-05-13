@@ -4,7 +4,7 @@ using namespace std;
 
 class Gen_base {
 protected:
-    mt19937 gen;
+    mt19937_64 gen;
 
     long long rand(){
         return gen();

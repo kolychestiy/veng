@@ -3,9 +3,12 @@
 using namespace std;
 
 int main(){
-    Min_cost_flow_bellman bel;
-    Brute_force bt;
-    vector<Solve_base*> a({new Min_cost_flow_bellman, new Brute_force});
-    check_correct_solves(a);
-    return 0;
+    vector<Solve_base*> a({
+        new Veng_lopatin,
+        // new Veng_n_4,
+        // new Veng_n_5
+        // new Min_cost_flow_dijkstra,
+        // new Min_cost_flow_bellman
+    });
+    check_times_solves(a);
 }
