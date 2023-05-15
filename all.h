@@ -12,6 +12,7 @@
 #include "check_time.h"
 #include "veng_n_3.h"
 #include "veng_lopatin.h"
+#include "veng_opt.h"
 using namespace std;
 
 vector<vector<long long>> read_base_input(){

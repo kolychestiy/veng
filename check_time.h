@@ -4,13 +4,13 @@
 #include "gen_random_base.h"
 using namespace std;
 
-bool check_times_solves(vector<Solve_base*> solves){
-    Gen_random_base gen(700, 700, 4000000000000);
+bool check_times_solves(vector<Solve_base*> solves, int n, int m, long long c, int cp = 100){
+    Gen_random_base gen(n, m, c);
     
     vector<long long> tms(solves.size());
-    int cp = 100;
+    // int cp = 10;
     for (int i = 0; i < cp; i++){
-        cout << i << endl;
+        // cout << i << endl;
         vector<vector<long long>> a;
         gen.next(a);
 
@@ -42,9 +42,10 @@ bool check_times_solves(vector<Solve_base*> solves){
         }
     }
 
-    cout << "GOOD!\n";
+    // cout << "GOOD!\n";
     for (auto e : tms){
-        cout << e / (double)cp << ' ';
+        cout << e / (double)cp << ", ";
     }
+    // cout << "\n";
     return true;
 }
